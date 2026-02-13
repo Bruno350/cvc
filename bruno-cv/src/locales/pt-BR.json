@@ -1,0 +1,114 @@
+{
+  "header": {
+    "home": "Início",
+    "about": "Sobre",
+    "education": "Educação",
+    "experience": "Experiência",
+    "skills": "Habilidades",
+    "certifications": "Certificações",
+    "contact": "Contato"
+  },
+  "hero": {
+    "greeting": "Olá, eu sou",
+    "name": "Bruno Thomsen Sobrinho",
+    "title": "Desenvolvedor Front-End",
+    "description": "Desenvolvedor Front-End apaixonado por criar experiências digitais incríveis. Especializado em React, TypeScript e tecnologias modernas da web.",
+    "stats": {
+      "experience": "Anos de Experiência",
+      "projects": "Projetos Concluídos",
+      "technologies": "Tecnologias"
+    },
+    "cta": {
+      "projects": "Ver Projetos",
+      "contact": "Entre em Contato"
+    }
+  },
+  "about": {
+    "title": "Sobre Mim",
+    "intro": "Desenvolvedor Front-End apaixonado por tecnologia e inovação",
+    "text1": "Sou um desenvolvedor dedicado e entusiasta da tecnologia, cursando Análise e Desenvolvimento de Sistemas na Universidade Positivo. Minha jornada no mundo da programação começou com curiosidade e se transformou em uma verdadeira paixão.",
+    "text2": "Especializo-me em criar interfaces modernas, responsivas e acessíveis, sempre buscando as melhores práticas de desenvolvimento e as tecnologias mais recentes do mercado.",
+    "text3": "Acredito no poder da tecnologia para transformar vidas e negócios, e estou sempre em busca de novos desafios que me permitam crescer profissionalmente e fazer a diferença.",
+    "highlights": {
+      "title1": "Desenvolvimento Moderno",
+      "desc1": "Especializado em React, TypeScript e Next.js",
+      "title2": "Design Responsivo",
+      "desc2": "Interfaces que funcionam perfeitamente em todos os dispositivos",
+      "title3": "Performance",
+      "desc3": "Código otimizado e focado em velocidade",
+      "title4": "Colaboração",
+      "desc4": "Experiência com metodologias ágeis e trabalho em equipe"
+    },
+    "journey": {
+      "title": "Minha Jornada"
+    }
+  },
+  "education": {
+    "title": "Educação",
+    "degree": "Análise e Desenvolvimento de Sistemas",
+    "institution": "Universidade Positivo (UP)",
+    "semester": "3º Semestre (em andamento)",
+    "location": "Curitiba, Paraná",
+    "description": "Curso tecnológico focado no desenvolvimento de software, abordando programação, banco de dados, engenharia de software, metodologias ágeis e gestão de projetos.",
+    "highlights": {
+      "title": "Destaques Acadêmicos",
+      "web": {
+        "title": "Desenvolvimento Web",
+        "desc": "Projetos práticos com React, TypeScript e Node.js"
+      },
+      "database": {
+        "title": "Banco de Dados",
+        "desc": "SQL, MongoDB e modelagem de dados"
+      },
+      "agile": {
+        "title": "Metodologias Ágeis",
+        "desc": "Scrum, Kanban e gestão de projetos"
+      },
+      "team": {
+        "title": "Projetos em Equipe",
+        "desc": "Desenvolvimento colaborativo e versionamento"
+      }
+    }
+  },
+  "experience": {
+    "title": "Experiência",
+    "intro": "Minha trajetória profissional e projetos desenvolvidos"
+  },
+  "skills": {
+    "title": "Habilidades",
+    "frontend": "Front-End",
+    "backend": "Back-End",
+    "tools": "Ferramentas",
+    "learning": "Aprendendo"
+  },
+  "certifications": {
+    "title": "Certificações",
+    "intro": "Cursos e certificações que complementam minha formação"
+  },
+  "contact": {
+    "title": "Contato",
+    "subtitle": "Vamos conversar?",
+    "description": "Estou sempre aberto a novas oportunidades, projetos interessantes e conversas sobre tecnologia. Entre em contato comigo!",
+    "email": {
+      "title": "Email",
+      "action": "Enviar email"
+    },
+    "github": {
+      "title": "GitHub",
+      "action": "Ver projetos"
+    },
+    "linkedin": {
+      "title": "LinkedIn",
+      "action": "Conectar"
+    },
+    "location": "Curitiba, Paraná, Brasil",
+    "availability": "Disponível para novos projetos"
+  },
+  "footer": {
+    "tagline": "Desenvolvedor Front-End apaixonado por criar experiências digitais incríveis",
+    "navigation": "Navegação",
+    "connect": "Conecte-se",
+    "copyright": "Desenvolvido com",
+    "and": "e"
+  }
+}

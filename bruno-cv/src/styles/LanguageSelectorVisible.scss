@@ -1,0 +1,217 @@
+// ============================================
+// LANGUAGE SELECTOR STYLES - VERSÃO VISÍVEL
+// ============================================
+
+.language-selector {
+  position: relative;
+  z-index: 1001; // Maior que o header
+  margin: 0 4px; // Espaçamento dos lados
+}
+
+.language-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--card-bg);
+  border: 2px solid var(--accent-color);
+  border-radius: 12px;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  min-width: 100px;
+  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+
+  &:hover {
+    background: var(--accent-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  .globe-icon {
+    font-size: 1.2rem;
+    color: currentColor;
+  }
+
+  .current-lang {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+  }
+
+  .dropdown-arrow {
+    font-size: 0.7rem;
+    color: currentColor;
+    margin-left: 4px;
+    transition: transform 0.2s ease;
+  }
+}
+
+// Estado aberto
+.language-button:has(+ .language-dropdown) {
+  .dropdown-arrow {
+    transform: rotate(180deg);
+  }
+}
+
+.language-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  min-width: 200px;
+  background: var(--card-bg);
+  border: 2px solid var(--accent-color);
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  z-index: 1002;
+
+  // Seta para cima
+  &::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: 20px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid var(--accent-color);
+  }
+}
+
+.language-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 16px;
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+  position: relative;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .lang-flag {
+    font-size: 1.8rem;
+    line-height: 1;
+    min-width: 30px;
+    text-align: center;
+  }
+
+  .lang-name {
+    flex: 1;
+    font-weight: 600;
+  }
+
+  .check-icon {
+    color: var(--accent-color);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &.active {
+    background: var(--secondary-bg);
+    color: var(--accent-color);
+    font-weight: 700;
+  }
+
+  &:hover:not(.active) {
+    background: var(--accent-color);
+    color: white;
+    transform: translateX(4px);
+    
+    .lang-flag {
+      transform: scale(1.2);
+    }
+  }
+}
+
+// Dark mode específico
+[data-theme="dark"] {
+  .language-button {
+    background: var(--secondary-bg);
+    border-color: var(--accent-color);
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+
+    &:hover {
+      background: var(--accent-color);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+    }
+  }
+
+  .language-dropdown {
+    background: var(--secondary-bg);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  }
+}
+
+// Responsivo
+@media (max-width: 768px) {
+  .language-button {
+    padding: 8px 12px;
+    min-width: 90px;
+    
+    .current-lang {
+      font-size: 0.85rem;
+      gap: 4px;
+    }
+
+    .globe-icon {
+      font-size: 1.1rem;
+    }
+  }
+
+  .language-dropdown {
+    min-width: 180px;
+  }
+
+  .language-option {
+    padding: 12px 14px;
+    
+    .lang-flag {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .language-selector {
+    margin: 0 2px;
+  }
+
+  .language-button {
+    padding: 6px 10px;
+    min-width: 80px;
+    gap: 6px;
+
+    .current-lang span:last-child {
+      display: none; // Oculta o código do idioma em telas muito pequenas
+    }
+  }
+
+  .language-dropdown {
+    min-width: 160px;
+    right: -10px;
+  }
+}

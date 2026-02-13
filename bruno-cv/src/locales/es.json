@@ -1,0 +1,114 @@
+{
+  "header": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "education": "Educación",
+    "experience": "Experiencia",
+    "skills": "Habilidades",
+    "certifications": "Certificaciones",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "name": "Bruno Thomsen Sobrinho",
+    "title": "Desarrollador Front-End",
+    "description": "Desarrollador Front-End apasionado por crear experiencias digitales increíbles. Especializado en React, TypeScript y tecnologías web modernas.",
+    "stats": {
+      "experience": "Años de Experiencia",
+      "projects": "Proyectos Completados",
+      "technologies": "Tecnologías"
+    },
+    "cta": {
+      "projects": "Ver Proyectos",
+      "contact": "Contactar"
+    }
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "intro": "Desarrollador Front-End apasionado por la tecnología e innovación",
+    "text1": "Soy un desarrollador dedicado y entusiasta de la tecnología, estudiando Análisis y Desarrollo de Sistemas en la Universidade Positivo. Mi viaje en el mundo de la programación comenzó con curiosidad y se convirtió en una verdadera pasión.",
+    "text2": "Me especializo en crear interfaces modernas, responsivas y accesibles, siempre buscando las mejores prácticas de desarrollo y las últimas tecnologías del mercado.",
+    "text3": "Creo en el poder de la tecnología para transformar vidas y negocios, y siempre estoy en busca de nuevos desafíos que me permitan crecer profesionalmente y marcar la diferencia.",
+    "highlights": {
+      "title1": "Desarrollo Moderno",
+      "desc1": "Especializado en React, TypeScript y Next.js",
+      "title2": "Diseño Responsivo",
+      "desc2": "Interfaces que funcionan perfectamente en todos los dispositivos",
+      "title3": "Rendimiento",
+      "desc3": "Código optimizado enfocado en velocidad",
+      "title4": "Colaboración",
+      "desc4": "Experiencia con metodologías ágiles y trabajo en equipo"
+    },
+    "journey": {
+      "title": "Mi Trayectoria"
+    }
+  },
+  "education": {
+    "title": "Educación",
+    "degree": "Análisis y Desarrollo de Sistemas",
+    "institution": "Universidade Positivo (UP)",
+    "semester": "3º Semestre (en curso)",
+    "location": "Curitiba, Paraná",
+    "description": "Curso tecnológico enfocado en el desarrollo de software, abordando programación, bases de datos, ingeniería de software, metodologías ágiles y gestión de proyectos.",
+    "highlights": {
+      "title": "Destacados Académicos",
+      "web": {
+        "title": "Desarrollo Web",
+        "desc": "Proyectos prácticos con React, TypeScript y Node.js"
+      },
+      "database": {
+        "title": "Bases de Datos",
+        "desc": "SQL, MongoDB y modelado de datos"
+      },
+      "agile": {
+        "title": "Metodologías Ágiles",
+        "desc": "Scrum, Kanban y gestión de proyectos"
+      },
+      "team": {
+        "title": "Proyectos en Equipo",
+        "desc": "Desarrollo colaborativo y versionamiento"
+      }
+    }
+  },
+  "experience": {
+    "title": "Experiencia",
+    "intro": "Mi trayectoria profesional y proyectos desarrollados"
+  },
+  "skills": {
+    "title": "Habilidades",
+    "frontend": "Front-End",
+    "backend": "Back-End",
+    "tools": "Herramientas",
+    "learning": "Aprendiendo"
+  },
+  "certifications": {
+    "title": "Certificaciones",
+    "intro": "Cursos y certificaciones que complementan mi formación"
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "¿Hablamos?",
+    "description": "¡Siempre estoy abierto a nuevas oportunidades, proyectos interesantes y conversaciones sobre tecnología. Contáctame!",
+    "email": {
+      "title": "Email",
+      "action": "Enviar email"
+    },
+    "github": {
+      "title": "GitHub",
+      "action": "Ver proyectos"
+    },
+    "linkedin": {
+      "title": "LinkedIn",
+      "action": "Conectar"
+    },
+    "location": "Curitiba, Paraná, Brasil",
+    "availability": "Disponible para nuevos proyectos"
+  },
+  "footer": {
+    "tagline": "Desarrollador Front-End apasionado por crear experiencias digitales increíbles",
+    "navigation": "Navegación",
+    "connect": "Conectar",
+    "copyright": "Desarrollado con",
+    "and": "y"
+  }
+}

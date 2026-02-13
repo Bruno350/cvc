@@ -1,0 +1,114 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "education": "Education",
+    "experience": "Experience",
+    "skills": "Skills",
+    "certifications": "Certifications",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "name": "Bruno Thomsen Sobrinho",
+    "title": "Front-End Developer",
+    "description": "Front-End Developer passionate about creating amazing digital experiences. Specialized in React, TypeScript and modern web technologies.",
+    "stats": {
+      "experience": "Years of Experience",
+      "projects": "Completed Projects",
+      "technologies": "Technologies"
+    },
+    "cta": {
+      "projects": "View Projects",
+      "contact": "Get in Touch"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "intro": "Front-End Developer passionate about technology and innovation",
+    "text1": "I'm a dedicated developer and technology enthusiast, studying Systems Analysis and Development at Universidade Positivo. My journey in the programming world started with curiosity and turned into a true passion.",
+    "text2": "I specialize in creating modern, responsive and accessible interfaces, always seeking best development practices and the latest market technologies.",
+    "text3": "I believe in the power of technology to transform lives and businesses, and I'm always looking for new challenges that allow me to grow professionally and make a difference.",
+    "highlights": {
+      "title1": "Modern Development",
+      "desc1": "Specialized in React, TypeScript and Next.js",
+      "title2": "Responsive Design",
+      "desc2": "Interfaces that work perfectly on all devices",
+      "title3": "Performance",
+      "desc3": "Optimized code focused on speed",
+      "title4": "Collaboration",
+      "desc4": "Experience with agile methodologies and teamwork"
+    },
+    "journey": {
+      "title": "My Journey"
+    }
+  },
+  "education": {
+    "title": "Education",
+    "degree": "Systems Analysis and Development",
+    "institution": "Universidade Positivo (UP)",
+    "semester": "3rd Semester (in progress)",
+    "location": "Curitiba, Paraná",
+    "description": "Technology course focused on software development, covering programming, databases, software engineering, agile methodologies and project management.",
+    "highlights": {
+      "title": "Academic Highlights",
+      "web": {
+        "title": "Web Development",
+        "desc": "Practical projects with React, TypeScript and Node.js"
+      },
+      "database": {
+        "title": "Databases",
+        "desc": "SQL, MongoDB and data modeling"
+      },
+      "agile": {
+        "title": "Agile Methodologies",
+        "desc": "Scrum, Kanban and project management"
+      },
+      "team": {
+        "title": "Team Projects",
+        "desc": "Collaborative development and versioning"
+      }
+    }
+  },
+  "experience": {
+    "title": "Experience",
+    "intro": "My professional journey and developed projects"
+  },
+  "skills": {
+    "title": "Skills",
+    "frontend": "Front-End",
+    "backend": "Back-End",
+    "tools": "Tools",
+    "learning": "Learning"
+  },
+  "certifications": {
+    "title": "Certifications",
+    "intro": "Courses and certifications that complement my education"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's talk?",
+    "description": "I'm always open to new opportunities, interesting projects and conversations about technology. Get in touch!",
+    "email": {
+      "title": "Email",
+      "action": "Send email"
+    },
+    "github": {
+      "title": "GitHub",
+      "action": "View projects"
+    },
+    "linkedin": {
+      "title": "LinkedIn",
+      "action": "Connect"
+    },
+    "location": "Curitiba, Paraná, Brazil",
+    "availability": "Available for new projects"
+  },
+  "footer": {
+    "tagline": "Front-End Developer passionate about creating amazing digital experiences",
+    "navigation": "Navigation",
+    "connect": "Connect",
+    "copyright": "Developed with",
+    "and": "and"
+  }
+}

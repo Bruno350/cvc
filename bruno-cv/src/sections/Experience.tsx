@@ -1,29 +1,31 @@
 import { motion } from 'framer-motion';
 import { FaBriefcase, FaExternalLinkAlt, FaCode, FaUsers } from 'react-icons/fa';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Experience: React.FC = () => {
+  const { t } = useLanguage();
+
   const experiences = [
     {
-      title: 'Desenvolvedor Full-Stack',
-      company: 'CodeByte',
-      period: '2023 - 2024',
-      location: 'Curitiba, PR',
-      description:
-        'Contribuí no desenvolvimento de aplicações web full-stack, trabalhando com React, TypeScript e Node.js. Participei de projetos colaborativos usando metodologias ágeis.',
+      titleKey: 'experience.jobs.0.title',
+      companyKey: 'experience.jobs.0.company',
+      periodKey: 'experience.jobs.0.period',
+      locationKey: 'experience.jobs.0.location',
+      descriptionKey: 'experience.jobs.0.description',
       link: 'https://www.linkedin.com/company/codebyte/?originalSubdomain=br',
       technologies: ['React', 'TypeScript', 'Node.js', 'Scrum', 'Azure DevOps'],
-      icon: <FaCode />
+      icon: <FaCode />,
     },
     {
-      title: 'Desenvolvedor Web',
-      company: 'Projeto AED Alimentos',
-      period: '2023',
-      location: 'Curitiba, PR',
-      description:
-        'Desenvolvimento de aplicações web para gerenciamento de alimentos, focando em interface intuitiva e experiência do usuário. Implementação de funcionalidades de CRUD e integração com banco de dados.',
+      titleKey: 'experience.jobs.1.title',
+      companyKey: 'experience.jobs.1.company',
+      periodKey: 'experience.jobs.1.period',
+      locationKey: 'experience.jobs.1.location',
+      descriptionKey: 'experience.jobs.1.description',
+      link: null,
       technologies: ['React', 'JavaScript', 'MongoDB', 'CSS'],
-      icon: <FaBriefcase />
-    }
+      icon: <FaBriefcase />,
+    },
   ];
 
   return (
@@ -35,10 +37,7 @@ const Experience: React.FC = () => {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <p>
-          Minha experiência profissional inclui trabalhos em equipe, desenvolvimento de
-          projetos reais e colaboração com empresas da região de Curitiba.
-        </p>
+        <p>{t('experience.intro')}</p>
       </motion.div>
 
       <div className="experience-timeline">
@@ -61,16 +60,13 @@ const Experience: React.FC = () => {
 
             <motion.div
               className="experience-card"
-              whileHover={{ 
-                scale: 1.02, 
-                boxShadow: '0 15px 40px rgba(0, 0, 0, 0.15)' 
-              }}
+              whileHover={{ scale: 1.02, boxShadow: '0 15px 40px rgba(0, 0, 0, 0.15)' }}
             >
               <div className="experience-header">
                 <div>
-                  <h3 className="experience-title">{exp.title}</h3>
+                  <h3 className="experience-title">{t(exp.titleKey)}</h3>
                   <h4 className="experience-company">
-                    {exp.company}
+                    {t(exp.companyKey)}
                     {exp.link && (
                       <motion.a
                         href={exp.link}
@@ -85,12 +81,12 @@ const Experience: React.FC = () => {
                   </h4>
                 </div>
                 <div className="experience-meta">
-                  <span className="experience-period">{exp.period}</span>
-                  <span className="experience-location">{exp.location}</span>
+                  <span className="experience-period">{t(exp.periodKey)}</span>
+                  <span className="experience-location">{t(exp.locationKey)}</span>
                 </div>
               </div>
 
-              <p className="experience-description">{exp.description}</p>
+              <p className="experience-description">{t(exp.descriptionKey)}</p>
 
               <div className="experience-technologies">
                 {exp.technologies.map((tech, techIndex) => (
@@ -101,11 +97,7 @@ const Experience: React.FC = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.3, delay: 0.5 + techIndex * 0.1 }}
                     viewport={{ once: true }}
-                    whileHover={{ 
-                      scale: 1.1, 
-                      backgroundColor: 'var(--accent-color)',
-                      color: '#fff'
-                    }}
+                    whileHover={{ scale: 1.1, backgroundColor: 'var(--accent-color)', color: '#fff' }}
                   >
                     {tech}
                   </motion.span>
@@ -131,18 +123,15 @@ const Experience: React.FC = () => {
           >
             <FaUsers />
           </motion.div>
-          <h3>Vamos trabalhar juntos?</h3>
-          <p>
-            Estou sempre aberto a novos desafios e oportunidades de colaboração em
-            projetos interessantes.
-          </p>
+          <h3>{t('experience.cta.title')}</h3>
+          <p>{t('experience.cta.description')}</p>
           <motion.a
             href="#contact"
             className="cta-button"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Entre em Contato
+            {t('experience.cta.button')}
           </motion.a>
         </div>
       </motion.div>

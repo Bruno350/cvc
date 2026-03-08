@@ -1,28 +1,19 @@
 import { motion } from 'framer-motion';
 import {
-  FaReact,
-  FaNodeJs,
-  FaHtml5,
-  FaCss3Alt,
-  FaGitAlt,
-  FaGithub,
-  FaDatabase,
-  FaTasks,
-  FaMicrosoft
+  FaReact, FaNodeJs, FaHtml5, FaCss3Alt,
+  FaGitAlt, FaGithub, FaDatabase, FaTasks, FaMicrosoft
 } from 'react-icons/fa';
 import {
-  SiTypescript,
-  SiJavascript,
-  SiVite,
-  SiMongodb,
-  SiSass,
-  SiC
+  SiTypescript, SiJavascript, SiVite, SiMongodb, SiSass, SiC
 } from 'react-icons/si';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Skills: React.FC = () => {
+  const { t } = useLanguage();
+
   const skillCategories = [
     {
-      category: 'Front-End',
+      categoryKey: 'skills.categories.frontend',
       color: '#61DAFB',
       skills: [
         { name: 'React', icon: <FaReact />, level: 95 },
@@ -30,37 +21,37 @@ const Skills: React.FC = () => {
         { name: 'JavaScript', icon: <SiJavascript />, level: 95 },
         { name: 'HTML5', icon: <FaHtml5 />, level: 95 },
         { name: 'CSS3', icon: <FaCss3Alt />, level: 90 },
-        { name: 'SCSS', icon: <SiSass />, level: 85 }
-      ]
+        { name: 'SCSS', icon: <SiSass />, level: 85 },
+      ],
     },
     {
-      category: 'Back-End & Database',
+      categoryKey: 'skills.categories.backend',
       color: '#68A063',
       skills: [
         { name: 'Node.js', icon: <FaNodeJs />, level: 75 },
         { name: 'SQL', icon: <FaDatabase />, level: 70 },
         { name: 'MongoDB', icon: <SiMongodb />, level: 65 },
-        { name: 'C', icon: <SiC />, level: 60 }
-      ]
+        { name: 'C', icon: <SiC />, level: 60 },
+      ],
     },
     {
-      category: 'Ferramentas & Metodologias',
+      categoryKey: 'skills.categories.tools',
       color: '#F05032',
       skills: [
         { name: 'Git', icon: <FaGitAlt />, level: 90 },
         { name: 'GitHub', icon: <FaGithub />, level: 90 },
         { name: 'Vite', icon: <SiVite />, level: 85 },
         { name: 'Azure DevOps', icon: <FaMicrosoft />, level: 70 },
-        { name: 'Scrum', icon: <FaTasks />, level: 75 }
-      ]
-    }
+        { name: 'Scrum', icon: <FaTasks />, level: 75 },
+      ],
+    },
   ];
 
   return (
     <div className="skills-content">
       {skillCategories.map((category, categoryIndex) => (
         <motion.div
-          key={category.category}
+          key={category.categoryKey}
           className="skill-category"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -72,7 +63,7 @@ const Skills: React.FC = () => {
             style={{ color: category.color }}
             whileHover={{ x: 10 }}
           >
-            {category.category}
+            {t(category.categoryKey)}
           </motion.h3>
 
           <div className="skills-grid">
@@ -87,7 +78,7 @@ const Skills: React.FC = () => {
                 whileHover={{
                   scale: 1.05,
                   boxShadow: '0 10px 30px rgba(0, 0, 0, 0.2)',
-                  borderColor: category.color
+                  borderColor: category.color,
                 }}
               >
                 <motion.div
@@ -101,7 +92,6 @@ const Skills: React.FC = () => {
 
                 <div className="skill-info">
                   <h4 className="skill-name">{skill.name}</h4>
-
                   <div className="skill-bar-container">
                     <motion.div
                       className="skill-bar"
@@ -112,7 +102,6 @@ const Skills: React.FC = () => {
                       style={{ backgroundColor: category.color }}
                     />
                   </div>
-
                   <span className="skill-level">{skill.level}%</span>
                 </div>
               </motion.div>
@@ -128,12 +117,8 @@ const Skills: React.FC = () => {
         transition={{ duration: 0.6, delay: 0.8 }}
         viewport={{ once: true }}
       >
-        <h3>Aprendizado Contínuo</h3>
-        <p>
-          A tecnologia está sempre evoluindo, e eu também. Estou constantemente
-          estudando novas ferramentas, frameworks e melhores práticas para entregar
-          soluções cada vez melhores.
-        </p>
+        <h3>{t('skills.learning.title')}</h3>
+        <p>{t('skills.learning.description')}</p>
 
         <div className="learning-tags">
           {['Next.js', 'React Native', 'Docker', 'AWS', 'GraphQL'].map((tech, index) => (

@@ -1,31 +1,22 @@
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaHeart, FaCode, FaEnvelope } from 'react-icons/fa';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
 
   const socialLinks = [
-    {
-      name: 'GitHub',
-      url: 'https://github.com/Bruno350',
-      icon: FaGithub,
-      color: '#333',
-      darkColor: '#f5f5f5'
-    },
-    {
-      name: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/bruno-thomsen-sobrinho',
-      icon: FaLinkedin,
-      color: '#0077B5',
-      darkColor: '#0077B5'
-    },
-    {
-      name: 'Email',
-      url: 'mailto:brunodevthomsen@gmail.com',
-      icon: FaEnvelope,
-      color: '#3b82f6',
-      darkColor: '#3b82f6'
-    }
+    { name: 'GitHub',   url: 'https://github.com/Bruno350',                          icon: FaGithub   },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/bruno-thomsen-sobrinho',   icon: FaLinkedin },
+    { name: 'Email',    url: 'mailto:brunodevthomsen@gmail.com',                     icon: FaEnvelope },
+  ];
+
+  const navLinks = [
+    { href: '#hero',       label: t('footer.links.home') },
+    { href: '#about',      label: t('footer.links.about') },
+    { href: '#experience', label: t('footer.links.experience') },
+    { href: '#contact',    label: t('footer.links.contact') },
   ];
 
   return (
@@ -38,13 +29,14 @@ const Footer: React.FC = () => {
     >
       <div className="container">
         <div className="footer-content">
+          {/* Brand */}
           <div className="footer-section">
             <motion.h3
               initial={{ x: -20, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ delay: 0.2 }}
             >
-              Bruno Thomsen Sobrinho
+              {t('footer.name')}
             </motion.h3>
             <motion.p
               initial={{ x: -20, opacity: 0 }}
@@ -52,17 +44,18 @@ const Footer: React.FC = () => {
               transition={{ delay: 0.3 }}
               className="footer-tagline"
             >
-              Desenvolvedor Front-End apaixonado por criar experiências digitais incríveis
+              {t('footer.tagline')}
             </motion.p>
           </div>
 
+          {/* Navigation */}
           <div className="footer-section">
             <motion.h4
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2 }}
             >
-              Navegação
+              {t('footer.navigation')}
             </motion.h4>
             <motion.ul
               className="footer-links"
@@ -70,20 +63,22 @@ const Footer: React.FC = () => {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.3 }}
             >
-              <li><a href="#hero">Início</a></li>
-              <li><a href="#about">Sobre</a></li>
-              <li><a href="#experience">Experiência</a></li>
-              <li><a href="#contact">Contato</a></li>
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <a href={link.href}>{link.label}</a>
+                </li>
+              ))}
             </motion.ul>
           </div>
 
+          {/* Social */}
           <div className="footer-section">
             <motion.h4
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2 }}
             >
-              Conecte-se
+              {t('footer.connect')}
             </motion.h4>
             <motion.div
               className="footer-socials"
@@ -103,16 +98,8 @@ const Footer: React.FC = () => {
                     className="footer-social-link"
                     initial={{ scale: 0, rotate: -180 }}
                     whileInView={{ scale: 1, rotate: 0 }}
-                    transition={{ 
-                      delay: 0.4 + index * 0.1,
-                      type: 'spring',
-                      stiffness: 200
-                    }}
-                    whileHover={{ 
-                      scale: 1.15, 
-                      rotate: 5,
-                      y: -5
-                    }}
+                    transition={{ delay: 0.4 + index * 0.1, type: 'spring', stiffness: 200 }}
+                    whileHover={{ scale: 1.15, rotate: 5, y: -5 }}
                     whileTap={{ scale: 0.9 }}
                   >
                     <Icon />
@@ -131,7 +118,7 @@ const Footer: React.FC = () => {
           transition={{ delay: 0.5 }}
         >
           <p className="footer-copyright">
-            © {currentYear} Bruno Thomsen Sobrinho. Desenvolvido com{' '}
+            © {currentYear} Bruno Thomsen Sobrinho. {t('footer.copyright')}{' '}
             <motion.span
               className="footer-icon"
               animate={{ scale: [1, 1.2, 1] }}
@@ -139,7 +126,7 @@ const Footer: React.FC = () => {
             >
               <FaHeart />
             </motion.span>{' '}
-            e{' '}
+            {t('footer.and')}{' '}
             <motion.span
               className="footer-icon"
               animate={{ rotate: [0, 5, -5, 0] }}

@@ -4,75 +4,58 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import ThemeToggle from './ThemeToggle';
 import LanguageSelector from './LanguageSelector';
 import { useLanguage } from '../contexts/LanguageContext';
-import '../styles/main.scss'; // ou o caminho correto para seu SCSS global
 
 const Header: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>('hero');
   const [scrolled, setScrolled] = useState<boolean>(false);
   const { t } = useLanguage();
 
-  // Lista de seções com traduções dinâmicas
   const sections = [
-    { id: 'hero', label: t('header.home') },
-    { id: 'about', label: t('header.about') },
-    { id: 'education', label: t('header.education') },
-    { id: 'experience', label: t('header.experience') },
-    { id: 'skills', label: t('header.skills') },
-    { id: 'certifications', label: t('header.certifications') },
-    { id: 'contact', label: t('header.contact') },
+    { id: 'hero',          label: t('header.home') },
+    { id: 'about',         label: t('header.about') },
+    { id: 'education',     label: t('header.education') },
+    { id: 'experience',    label: t('header.experience') },
+    { id: 'skills',        label: t('header.skills') },
+    { id: 'certifications',label: t('header.certifications') },
+    { id: 'contact',       label: t('header.contact') },
+    { id: 'cv',            label: t('header.cv') },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
-      // Atualiza estado de scroll (para header fixo/fundo)
       setScrolled(window.scrollY > 50);
-
-      // Detecta seção ativa com IntersectionObserver (mais eficiente que querySelectorAll + loop)
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              setActiveSection(entry.target.id);
-            }
-          });
-        },
-        {
-          rootMargin: '-80px 0px -60% 0px', // ajusta para header fixo + trigger mais cedo
-          threshold: 0.1,
-        }
-      );
-
-      // Observa todas as seções
-      document.querySelectorAll('section[id], .hero-section').forEach((section) => {
-        observer.observe(section);
-      });
-
-      return () => {
-        observer.disconnect();
-      };
     };
 
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: '-80px 0px -60% 0px', threshold: 0.1 }
+    );
+
+    document.querySelectorAll('section[id], .hero-section').forEach((section) => {
+      observer.observe(section);
+    });
+
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // chama uma vez no mount para definir inicial
+    handleScroll();
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
     };
   }, []);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      const headerOffset = 80; // altura aproximada do header fixo
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
-
-      // Atualiza activeSection imediatamente (melhora UX)
+      const headerOffset = 80;
+      const offsetPosition = element.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
       setActiveSection(id);
     }
   };
@@ -85,7 +68,6 @@ const Header: React.FC = () => {
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
       <div className="container header-content">
-        {/* Logo */}
         <motion.div
           className="logo"
           whileHover={{ scale: 1.05 }}
@@ -96,7 +78,6 @@ const Header: React.FC = () => {
           <span className="logo-bracket">{'/>'}</span>
         </motion.div>
 
-        {/* Navegação */}
         <nav className="nav">
           <ul className="nav-list">
             {sections.map((sec, index) => (
@@ -110,7 +91,6 @@ const Header: React.FC = () => {
                   onClick={() => scrollToSection(sec.id)}
                   className={`nav-link ${activeSection === sec.id ? 'active' : ''}`}
                   aria-current={activeSection === sec.id ? 'page' : undefined}
-                  aria-label={`Ir para seção ${sec.label}`}
                 >
                   {sec.label}
                   {activeSection === sec.id && (
@@ -126,7 +106,6 @@ const Header: React.FC = () => {
           </ul>
         </nav>
 
-        {/* Ações à direita */}
         <div className="header-actions">
           <motion.a
             href="https://github.com/Bruno350"
@@ -152,10 +131,7 @@ const Header: React.FC = () => {
             <FaLinkedin size={24} />
           </motion.a>
 
-          {/* Seletor de idioma (bem visível) */}
           <LanguageSelector />
-
-          {/* Toggle de tema */}
           <ThemeToggle />
         </div>
       </div>

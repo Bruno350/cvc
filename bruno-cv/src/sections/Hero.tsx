@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion';
 import { FaArrowDown, FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Hero: React.FC = () => {
+  const { t } = useLanguage();
+
   const scrollToContact = () => {
     const element = document.getElementById('contact');
     if (element) {
@@ -29,7 +32,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            Olá, eu sou
+            {t('hero.greeting')}
           </motion.div>
 
           <motion.h1
@@ -49,7 +52,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.9 }}
           >
-            <span className="typing-text">Desenvolvedor Front-End</span>
+            <span className="typing-text">{t('hero.title')}</span>
             <span className="cursor">|</span>
           </motion.div>
 
@@ -59,9 +62,7 @@ const Hero: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.1 }}
           >
-            Especializado em <strong>React</strong> e <strong>TypeScript</strong>, criando
-            experiências web modernas e performáticas. Inspirado pelo meu pai, engenheiro
-            de software, transformo ideias em código elegante.
+            {t('hero.description')}
           </motion.p>
 
           <motion.div
@@ -71,18 +72,18 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.8, delay: 1.3 }}
           >
             <div className="stat-item">
-              <span className="stat-value">3º</span>
-              <span className="stat-label">Semestre ADS</span>
+              <span className="stat-value">{t('hero.stats.semester')}</span>
+              <span className="stat-label">{t('hero.stats.semesterLabel')}</span>
             </div>
             <div className="stat-divider"></div>
             <div className="stat-item">
-              <span className="stat-value">2+</span>
-              <span className="stat-label">Anos de Experiência</span>
+              <span className="stat-value">{t('hero.stats.experience')}</span>
+              <span className="stat-label">{t('hero.stats.experienceLabel')}</span>
             </div>
             <div className="stat-divider"></div>
             <div className="stat-item">
-              <span className="stat-value">🇧🇷 🇺🇸 🇪🇸</span>
-              <span className="stat-label">PT | EN | ES</span>
+              <span className="stat-value">{t('hero.stats.languages')}</span>
+              <span className="stat-label">{t('hero.stats.languagesLabel')}</span>
             </div>
           </motion.div>
 
@@ -99,7 +100,7 @@ const Hero: React.FC = () => {
               whileTap={{ scale: 0.95 }}
             >
               <FaEnvelope />
-              Entre em Contato
+              {t('hero.cta.contact')}
             </motion.button>
             <motion.a
               href="https://github.com/Bruno350"
@@ -110,7 +111,7 @@ const Hero: React.FC = () => {
               whileTap={{ scale: 0.95 }}
             >
               <FaGithub />
-              Ver Projetos
+              {t('hero.cta.projects')}
             </motion.a>
           </motion.div>
 

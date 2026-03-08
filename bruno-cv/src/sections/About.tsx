@@ -1,28 +1,38 @@
 import { motion } from 'framer-motion';
 import { FaReact, FaNodeJs, FaCode, FaGlobeAmericas } from 'react-icons/fa';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const About: React.FC = () => {
+  const { t } = useLanguage();
+
   const highlights = [
     {
       icon: <FaReact />,
-      title: 'Front-End Specialist',
-      description: 'Especializado em React e TypeScript, criando interfaces modernas e performáticas'
+      titleKey: 'about.highlights.frontend.title',
+      descriptionKey: 'about.highlights.frontend.description',
     },
     {
       icon: <FaNodeJs />,
-      title: 'Full-Stack Ready',
-      description: 'Conhecimento em Node.js para desenvolvimento de aplicações completas'
+      titleKey: 'about.highlights.fullstack.title',
+      descriptionKey: 'about.highlights.fullstack.description',
     },
     {
       icon: <FaCode />,
-      title: 'Clean Code',
-      description: 'Apaixonado por código limpo, organizado e fácil de manter'
+      titleKey: 'about.highlights.cleancode.title',
+      descriptionKey: 'about.highlights.cleancode.description',
     },
     {
       icon: <FaGlobeAmericas />,
-      title: 'Multilíngue',
-      description: 'Fluente em inglês, intermediário em espanhol, comunicação global'
-    }
+      titleKey: 'about.highlights.multilingual.title',
+      descriptionKey: 'about.highlights.multilingual.description',
+    },
+  ];
+
+  const journeyItems = [
+    { year: '2005', descriptionKey: 'about.journey.items.0.description' },
+    { year: '2022', descriptionKey: 'about.journey.items.1.description' },
+    { year: '2023', descriptionKey: 'about.journey.items.2.description' },
+    { year: '2025', descriptionKey: 'about.journey.items.3.description' },
   ];
 
   return (
@@ -34,22 +44,9 @@ const About: React.FC = () => {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <p className="about-text">
-          Minha jornada na tecnologia começou cedo, inspirado pelo meu pai, um engenheiro
-          de software experiente. Vê-lo criar soluções e resolver problemas complexos me
-          fez perceber que era isso que eu queria fazer da vida.
-        </p>
-        <p className="about-text">
-          Trabalho principalmente com <strong>front-end</strong>, mas tenho noções sólidas
-          de <strong>Node.js</strong>. Minha stack principal é{' '}
-          <strong>React/TypeScript</strong>, mas estou sempre aprendendo novas tecnologias
-          e ferramentas.
-        </p>
-        <p className="about-text">
-          Nasci em <strong>São Paulo</strong> (23/11/2005) e atualmente estudo em{' '}
-          <strong>Curitiba</strong>, cursando o 3º semestre de Análise e Desenvolvimento
-          de Sistemas na Universidade Positivo (UP).
-        </p>
+        <p className="about-text">{t('about.intro1')}</p>
+        <p className="about-text">{t('about.intro2')}</p>
+        <p className="about-text">{t('about.intro3')}</p>
       </motion.div>
 
       <div className="about-highlights">
@@ -70,8 +67,8 @@ const About: React.FC = () => {
             >
               {item.icon}
             </motion.div>
-            <h3 className="highlight-title">{item.title}</h3>
-            <p className="highlight-description">{item.description}</p>
+            <h3 className="highlight-title">{t(item.titleKey)}</h3>
+            <p className="highlight-description">{t(item.descriptionKey)}</p>
           </motion.div>
         ))}
       </div>
@@ -83,63 +80,24 @@ const About: React.FC = () => {
         transition={{ duration: 0.6, delay: 0.3 }}
         viewport={{ once: true }}
       >
-        <h3 className="journey-title">Minha Jornada</h3>
+        <h3 className="journey-title">{t('about.journey.title')}</h3>
         <div className="journey-timeline">
-          <motion.div
-            className="timeline-item"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <div className="timeline-dot"></div>
-            <div className="timeline-content">
-              <span className="timeline-year">2005</span>
-              <p>Nasci em São Paulo, crescendo em um ambiente tecnológico</p>
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="timeline-item"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            viewport={{ once: true }}
-          >
-            <div className="timeline-dot"></div>
-            <div className="timeline-content">
-              <span className="timeline-year">2022</span>
-              <p>Iniciei cursos de Desenvolvimento Full Stack e mergulhei no mundo da programação</p>
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="timeline-item"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <div className="timeline-dot"></div>
-            <div className="timeline-content">
-              <span className="timeline-year">2023</span>
-              <p>Ingressei na UP e comecei a trabalhar em projetos reais com empresas</p>
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="timeline-item active"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            <div className="timeline-dot"></div>
-            <div className="timeline-content">
-              <span className="timeline-year">2025</span>
-              <p>Atualmente no 3º semestre, buscando novos desafios e oportunidades</p>
-            </div>
-          </motion.div>
+          {journeyItems.map((item, index) => (
+            <motion.div
+              key={item.year}
+              className={`timeline-item${index === journeyItems.length - 1 ? ' active' : ''}`}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <div className="timeline-dot"></div>
+              <div className="timeline-content">
+                <span className="timeline-year">{item.year}</span>
+                <p>{t(item.descriptionKey)}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </motion.div>
     </div>

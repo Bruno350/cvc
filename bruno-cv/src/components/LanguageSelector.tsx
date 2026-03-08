@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaGlobe, FaCheck } from 'react-icons/fa';
+import { FaCheck } from 'react-icons/fa';
 import { useLanguage } from '../contexts/LanguageContext';
 
 const LanguageSelector = () => {
@@ -23,9 +23,22 @@ const LanguageSelector = () => {
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('keydown', handleEscape);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, [isOpen]);
 
   const handleLanguageChange = (langCode: string) => {
     setLanguage(langCode as 'pt-BR' | 'en' | 'es');
@@ -40,11 +53,9 @@ const LanguageSelector = () => {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         aria-label="Select language"
+        aria-expanded={isOpen}
       >
-        <FaGlobe className="globe-icon" />
-        <span className="current-lang">
-          {currentLanguage?.flag} {currentLanguage?.code.split('-')[0].toUpperCase()}
-        </span>
+        <span className="current-flag">{currentLanguage?.flag}</span>
         <motion.span
           className="dropdown-arrow"
           animate={{ rotate: isOpen ? 180 : 0 }}
@@ -68,14 +79,9 @@ const LanguageSelector = () => {
                 key={lang.code}
                 className={`language-option ${language === lang.code ? 'active' : ''}`}
                 onClick={() => handleLanguageChange(lang.code)}
-                initial={{ opacity: 0, x: -20 }}
+                initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.05 }}
-                whileHover={{ 
-                  backgroundColor: 'var(--accent-color)',
-                  color: 'white',
-                  x: 5
-                }}
               >
                 <span className="lang-flag">{lang.flag}</span>
                 <span className="lang-name">{lang.name}</span>
@@ -84,7 +90,7 @@ const LanguageSelector = () => {
                     className="check-icon"
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
-                    transition={{ type: 'spring', stiffness: 500 }}
+                    transition={{ type: 'spring', stiffness: 400 }}
                   >
                     <FaCheck />
                   </motion.span>

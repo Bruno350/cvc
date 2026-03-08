@@ -6,109 +6,217 @@
     "experience": "Experience",
     "skills": "Skills",
     "certifications": "Certifications",
-    "contact": "Contact"
+    "contact": "Contact",
+    "cv": "CV"
   },
   "hero": {
     "greeting": "Hello, I'm",
-    "name": "Bruno Thomsen Sobrinho",
+    "firstName": "Bruno Thomsen",
+    "lastName": "Sobrinho",
     "title": "Front-End Developer",
-    "description": "Front-End Developer passionate about creating amazing digital experiences. Specialized in React, TypeScript and modern web technologies.",
+    "description": "Specialized in React and TypeScript, creating modern and performant web experiences. Inspired by my father, a software engineer, I transform ideas into elegant code.",
     "stats": {
-      "experience": "Years of Experience",
-      "projects": "Completed Projects",
-      "technologies": "Technologies"
+      "semester": "3rd",
+      "semesterLabel": "Semester ADS",
+      "experience": "2+",
+      "experienceLabel": "Years of Experience",
+      "languages": "🇧🇷 🇺🇸 🇪🇸",
+      "languagesLabel": "PT | EN | ES"
     },
     "cta": {
-      "projects": "View Projects",
-      "contact": "Get in Touch"
+      "contact": "Get in Touch",
+      "projects": "View Projects"
     }
   },
   "about": {
     "title": "About Me",
-    "intro": "Front-End Developer passionate about technology and innovation",
-    "text1": "I'm a dedicated developer and technology enthusiast, studying Systems Analysis and Development at Universidade Positivo. My journey in the programming world started with curiosity and turned into a true passion.",
-    "text2": "I specialize in creating modern, responsive and accessible interfaces, always seeking best development practices and the latest market technologies.",
-    "text3": "I believe in the power of technology to transform lives and businesses, and I'm always looking for new challenges that allow me to grow professionally and make a difference.",
+    "intro1": "My journey in technology started early, inspired by my father, an experienced software engineer. Watching him create solutions and solve complex problems made me realize this was what I wanted to do with my life.",
+    "intro2": "I work mainly with front-end, but I have solid knowledge of Node.js. My main stack is React/TypeScript, but I'm always learning new technologies and tools.",
+    "intro3": "I was born in São Paulo (11/23/2005) and currently study in Curitiba, in the 3rd semester of Systems Analysis and Development at Universidade Positivo (UP).",
     "highlights": {
-      "title1": "Modern Development",
-      "desc1": "Specialized in React, TypeScript and Next.js",
-      "title2": "Responsive Design",
-      "desc2": "Interfaces that work perfectly on all devices",
-      "title3": "Performance",
-      "desc3": "Optimized code focused on speed",
-      "title4": "Collaboration",
-      "desc4": "Experience with agile methodologies and teamwork"
+      "frontend": {
+        "title": "Front-End Specialist",
+        "description": "Specialized in React and TypeScript, creating modern and performant interfaces"
+      },
+      "fullstack": {
+        "title": "Full-Stack Ready",
+        "description": "Knowledge in Node.js for complete application development"
+      },
+      "cleancode": {
+        "title": "Clean Code",
+        "description": "Passionate about clean, organized, and maintainable code"
+      },
+      "multilingual": {
+        "title": "Multilingual",
+        "description": "Fluent in English, intermediate in Spanish, global communication"
+      }
     },
     "journey": {
-      "title": "My Journey"
+      "title": "My Journey",
+      "items": [
+        {
+          "year": "2005",
+          "description": "Born in São Paulo, growing up in a technological environment"
+        },
+        {
+          "year": "2022",
+          "description": "Started Full Stack Development courses and dove into the world of programming"
+        },
+        {
+          "year": "2023",
+          "description": "Joined UP and started working on real projects with companies"
+        },
+        {
+          "year": "2025",
+          "description": "Currently in 3rd semester, seeking new challenges and opportunities"
+        }
+      ]
     }
   },
   "education": {
-    "title": "Education",
+    "title": "Academic Background",
     "degree": "Systems Analysis and Development",
     "institution": "Universidade Positivo (UP)",
     "semester": "3rd Semester (in progress)",
     "location": "Curitiba, Paraná",
     "description": "Technology course focused on software development, covering programming, databases, software engineering, agile methodologies and project management.",
+    "highlightsTitle": "Academic Highlights",
     "highlights": {
-      "title": "Academic Highlights",
       "web": {
         "title": "Web Development",
-        "desc": "Practical projects with React, TypeScript and Node.js"
+        "description": "Practical projects with React, TypeScript and Node.js"
       },
       "database": {
-        "title": "Databases",
-        "desc": "SQL, MongoDB and data modeling"
+        "title": "Database",
+        "description": "SQL, MongoDB and data modeling"
       },
       "agile": {
         "title": "Agile Methodologies",
-        "desc": "Scrum, Kanban and project management"
+        "description": "Scrum, Kanban and project management"
       },
       "team": {
         "title": "Team Projects",
-        "desc": "Collaborative development and versioning"
+        "description": "Collaborative development and version control"
       }
     }
   },
   "experience": {
-    "title": "Experience",
-    "intro": "My professional journey and developed projects"
+    "title": "Experience & Projects",
+    "intro": "My professional experience includes teamwork, real project development and collaboration with companies in the Curitiba region.",
+    "jobs": [
+      {
+        "title": "Full-Stack Developer",
+        "company": "CodeByte",
+        "period": "2023 - 2024",
+        "location": "Curitiba, PR",
+        "description": "Contributed to the development of full-stack web applications, working with React, TypeScript and Node.js. Participated in collaborative projects using agile methodologies."
+      },
+      {
+        "title": "Web Developer",
+        "company": "AED Food Project",
+        "period": "2023",
+        "location": "Curitiba, PR",
+        "description": "Development of web applications for food management, focusing on intuitive interface and user experience. Implementation of CRUD functionalities and database integration."
+      }
+    ],
+    "cta": {
+      "title": "Let's work together?",
+      "description": "I'm always open to new challenges and collaboration opportunities on interesting projects.",
+      "button": "Get in Touch"
+    }
   },
   "skills": {
-    "title": "Skills",
-    "frontend": "Front-End",
-    "backend": "Back-End",
-    "tools": "Tools",
-    "learning": "Learning"
+    "title": "Technical Skills",
+    "categories": {
+      "frontend": "Front-End",
+      "backend": "Back-End & Database",
+      "tools": "Tools & Methodologies"
+    },
+    "learning": {
+      "title": "Continuous Learning",
+      "description": "Technology is always evolving, and so am I. I'm constantly studying new tools, frameworks and best practices to deliver increasingly better solutions."
+    }
   },
   "certifications": {
-    "title": "Certifications",
-    "intro": "Courses and certifications that complement my education"
+    "title": "Courses & Certifications",
+    "intro": "I invested in courses and certifications to deepen my knowledge and develop practical skills in full-stack development.",
+    "items": [
+      {
+        "title": "Full Stack Developer Course",
+        "institution": "Harve",
+        "year": "2023"
+      },
+      {
+        "title": "Full Stack Developer Course",
+        "institution": "DevSamurai",
+        "year": "2022-2023"
+      }
+    ],
+    "skillsAcquired": "Skills Acquired:",
+    "commitment": {
+      "title": "Commitment to Learning",
+      "description": "In addition to formal courses, I'm constantly studying through official documentation, tutorials, personal projects and participation in developer communities. Technology evolves fast, and I evolve with it.",
+      "stats": [
+        {
+          "number": "2+",
+          "label": "Certifications"
+        },
+        {
+          "number": "500+",
+          "label": "Study Hours"
+        },
+        {
+          "number": "∞",
+          "label": "Willingness to Learn"
+        }
+      ]
+    }
   },
   "contact": {
-    "title": "Contact",
+    "title": "Get in Touch",
     "subtitle": "Let's talk?",
-    "description": "I'm always open to new opportunities, interesting projects and conversations about technology. Get in touch!",
+    "description": "I'm always open to new opportunities, interesting projects and conversations about technology. Get in touch with me!",
     "email": {
       "title": "Email",
-      "action": "Send email"
+      "value": "brunodevthomsen@gmail.com",
+      "action": "Send email →"
     },
     "github": {
       "title": "GitHub",
-      "action": "View projects"
+      "value": "@Bruno350",
+      "action": "View projects →"
     },
     "linkedin": {
       "title": "LinkedIn",
-      "action": "Connect"
+      "value": "Bruno Thomsen Sobrinho",
+      "action": "Connect →"
     },
     "location": "Curitiba, Paraná, Brazil",
     "availability": "Available for new projects"
   },
   "footer": {
+    "name": "Bruno Thomsen Sobrinho",
     "tagline": "Front-End Developer passionate about creating amazing digital experiences",
     "navigation": "Navigation",
+    "links": {
+      "home": "Home",
+      "about": "About",
+      "experience": "Experience",
+      "contact": "Contact"
+    },
     "connect": "Connect",
     "copyright": "Developed with",
     "and": "and"
+  },
+  "cv": {
+    "title": "Download CV",
+    "subtitle": "Download my full resume",
+    "description": "Available in three languages. Choose your preference.",
+    "downloadBtn": "Download PDF",
+    "languages": {
+      "pt": "Portuguese",
+      "en": "English",
+      "es": "Spanish"
+    }
   }
 }

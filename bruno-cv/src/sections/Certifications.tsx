@@ -1,22 +1,31 @@
 import { motion } from 'framer-motion';
 import { FaCertificate, FaAward, FaCheckCircle } from 'react-icons/fa';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const Certifications: React.FC = () => {
+  const { t } = useLanguage();
+
   const certifications = [
     {
-      title: 'Curso de Desenvolvedor Full Stack',
-      institution: 'Harve',
-      year: '2023',
+      titleKey: 'certifications.items.0.title',
+      institutionKey: 'certifications.items.0.institution',
+      yearKey: 'certifications.items.0.year',
       skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Node.js', 'SQL'],
-      icon: <FaCertificate />
+      icon: <FaCertificate />,
     },
     {
-      title: 'Curso de Desenvolvedor Full Stack',
-      institution: 'DevSamurai',
-      year: '2022-2023',
+      titleKey: 'certifications.items.1.title',
+      institutionKey: 'certifications.items.1.institution',
+      yearKey: 'certifications.items.1.year',
       skills: ['React', 'TypeScript', 'Next.js', 'MongoDB', 'REST APIs'],
-      icon: <FaAward />
-    }
+      icon: <FaAward />,
+    },
+  ];
+
+  const stats = [
+    { numberKey: 'certifications.commitment.stats.0.number', labelKey: 'certifications.commitment.stats.0.label' },
+    { numberKey: 'certifications.commitment.stats.1.number', labelKey: 'certifications.commitment.stats.1.label' },
+    { numberKey: 'certifications.commitment.stats.2.number', labelKey: 'certifications.commitment.stats.2.label' },
   ];
 
   return (
@@ -28,10 +37,7 @@ const Certifications: React.FC = () => {
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <p>
-          Investi em cursos e certificações para aprofundar meus conhecimentos e
-          desenvolver habilidades práticas em desenvolvimento full-stack.
-        </p>
+        <p>{t('certifications.intro')}</p>
       </motion.div>
 
       <div className="certifications-grid">
@@ -43,11 +49,7 @@ const Certifications: React.FC = () => {
             whileInView={{ opacity: 1, y: 0, rotateY: 0 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
             viewport={{ once: true }}
-            whileHover={{ 
-              scale: 1.05, 
-              rotateY: 5,
-              boxShadow: '0 20px 50px rgba(0, 0, 0, 0.2)' 
-            }}
+            whileHover={{ scale: 1.05, rotateY: 5, boxShadow: '0 20px 50px rgba(0, 0, 0, 0.2)' }}
           >
             <motion.div
               className="cert-icon"
@@ -58,14 +60,14 @@ const Certifications: React.FC = () => {
             </motion.div>
 
             <div className="cert-content">
-              <h3 className="cert-title">{cert.title}</h3>
+              <h3 className="cert-title">{t(cert.titleKey)}</h3>
               <div className="cert-meta">
-                <span className="cert-institution">{cert.institution}</span>
-                <span className="cert-year">{cert.year}</span>
+                <span className="cert-institution">{t(cert.institutionKey)}</span>
+                <span className="cert-year">{t(cert.yearKey)}</span>
               </div>
 
               <div className="cert-skills">
-                <h4>Habilidades Adquiridas:</h4>
+                <h4>{t('certifications.skillsAcquired')}</h4>
                 <div className="skills-tags">
                   {cert.skills.map((skill, skillIndex) => (
                     <motion.span
@@ -75,11 +77,7 @@ const Certifications: React.FC = () => {
                       whileInView={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.3, delay: 0.5 + skillIndex * 0.1 }}
                       viewport={{ once: true }}
-                      whileHover={{ 
-                        scale: 1.1, 
-                        backgroundColor: 'var(--accent-color)',
-                        color: '#fff'
-                      }}
+                      whileHover={{ scale: 1.1, backgroundColor: 'var(--accent-color)', color: '#fff' }}
                     >
                       {skill}
                     </motion.span>
@@ -109,34 +107,15 @@ const Certifications: React.FC = () => {
         viewport={{ once: true }}
       >
         <div className="commitment-card">
-          <h3>Compromisso com o Aprendizado</h3>
-          <p>
-            Além dos cursos formais, estou constantemente estudando através de
-            documentações oficiais, tutoriais, projetos pessoais e participação em
-            comunidades de desenvolvedores. A tecnologia evolui rápido, e eu evoluo com ela.
-          </p>
+          <h3>{t('certifications.commitment.title')}</h3>
+          <p>{t('certifications.commitment.description')}</p>
           <div className="commitment-stats">
-            <motion.div
-              className="stat"
-              whileHover={{ scale: 1.1 }}
-            >
-              <span className="stat-number">2+</span>
-              <span className="stat-label">Certificações</span>
-            </motion.div>
-            <motion.div
-              className="stat"
-              whileHover={{ scale: 1.1 }}
-            >
-              <span className="stat-number">500+</span>
-              <span className="stat-label">Horas de Estudo</span>
-            </motion.div>
-            <motion.div
-              className="stat"
-              whileHover={{ scale: 1.1 }}
-            >
-              <span className="stat-number">∞</span>
-              <span className="stat-label">Vontade de Aprender</span>
-            </motion.div>
+            {stats.map((stat, index) => (
+              <motion.div key={index} className="stat" whileHover={{ scale: 1.1 }}>
+                <span className="stat-number">{t(stat.numberKey)}</span>
+                <span className="stat-label">{t(stat.labelKey)}</span>
+              </motion.div>
+            ))}
           </div>
         </div>
       </motion.div>

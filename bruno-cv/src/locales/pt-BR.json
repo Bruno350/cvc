@@ -6,109 +6,217 @@
     "experience": "Experiência",
     "skills": "Habilidades",
     "certifications": "Certificações",
-    "contact": "Contato"
+    "contact": "Contato",
+    "cv": "CV"
   },
   "hero": {
-    "greeting": "Olá, eu sou",
-    "name": "Bruno Thomsen Sobrinho",
+    "greeting": "Olá, sou",
+    "firstName": "Bruno Thomsen",
+    "lastName": "Sobrinho",
     "title": "Desenvolvedor Front-End",
-    "description": "Desenvolvedor Front-End apaixonado por criar experiências digitais incríveis. Especializado em React, TypeScript e tecnologias modernas da web.",
+    "description": "Especializado em React e TypeScript, criando experiências web modernas e de alto desempenho. Inspirado pelo meu pai, engenheiro de software, transformo ideias em código elegante.",
     "stats": {
-      "experience": "Anos de Experiência",
-      "projects": "Projetos Concluídos",
-      "technologies": "Tecnologias"
+      "semester": "3º",
+      "semesterLabel": "Semestre ADS",
+      "experience": "2+",
+      "experienceLabel": "Anos de Experiência",
+      "languages": "🇧🇷 🇺🇸 🇪🇸",
+      "languagesLabel": "PT | EN | ES"
     },
     "cta": {
-      "projects": "Ver Projetos",
-      "contact": "Entre em Contato"
+      "contact": "Entre em Contato",
+      "projects": "Ver Projetos"
     }
   },
   "about": {
     "title": "Sobre Mim",
-    "intro": "Desenvolvedor Front-End apaixonado por tecnologia e inovação",
-    "text1": "Sou um desenvolvedor dedicado e entusiasta da tecnologia, cursando Análise e Desenvolvimento de Sistemas na Universidade Positivo. Minha jornada no mundo da programação começou com curiosidade e se transformou em uma verdadeira paixão.",
-    "text2": "Especializo-me em criar interfaces modernas, responsivas e acessíveis, sempre buscando as melhores práticas de desenvolvimento e as tecnologias mais recentes do mercado.",
-    "text3": "Acredito no poder da tecnologia para transformar vidas e negócios, e estou sempre em busca de novos desafios que me permitam crescer profissionalmente e fazer a diferença.",
+    "intro1": "Meu caminho na tecnologia começou cedo, inspirado pelo meu pai, um engenheiro de software experiente. Vê-lo criar soluções e resolver problemas complexos me fez perceber que era isso que eu queria fazer da minha vida.",
+    "intro2": "Trabalho principalmente com front-end, mas tenho conhecimentos sólidos em Node.js. Meu stack principal é React/TypeScript, mas sempre estou aprendendo novas tecnologias e ferramentas.",
+    "intro3": "Nasci em São Paulo (23/11/2005) e atualmente estudo em Curitiba, no 3º semestre de Análise e Desenvolvimento de Sistemas na Universidade Positivo (UP).",
     "highlights": {
-      "title1": "Desenvolvimento Moderno",
-      "desc1": "Especializado em React, TypeScript e Next.js",
-      "title2": "Design Responsivo",
-      "desc2": "Interfaces que funcionam perfeitamente em todos os dispositivos",
-      "title3": "Performance",
-      "desc3": "Código otimizado e focado em velocidade",
-      "title4": "Colaboração",
-      "desc4": "Experiência com metodologias ágeis e trabalho em equipe"
+      "frontend": {
+        "title": "Especialista Front-End",
+        "description": "Especializado em React e TypeScript, criando interfaces modernas e de alto desempenho"
+      },
+      "fullstack": {
+        "title": "Pronto para Full-Stack",
+        "description": "Conhecimentos em Node.js para desenvolvimento de aplicações completas"
+      },
+      "cleancode": {
+        "title": "Código Limpo",
+        "description": "Apaixonado por código limpo, organizado e fácil de manter"
+      },
+      "multilingual": {
+        "title": "Multilíngue",
+        "description": "Fluente em inglês, intermediário em espanhol, comunicação global"
+      }
     },
     "journey": {
-      "title": "Minha Jornada"
+      "title": "Minha Trajetória",
+      "items": [
+        {
+          "year": "2005",
+          "description": "Nasci em São Paulo, crescendo em um ambiente tecnológico"
+        },
+        {
+          "year": "2022",
+          "description": "Iniciei cursos de Desenvolvimento Full Stack e mergulhei no mundo da programação"
+        },
+        {
+          "year": "2023",
+          "description": "Entrei na UP e comecei a trabalhar em projetos reais com empresas"
+        },
+        {
+          "year": "2025",
+          "description": "Atualmente no 3º semestre, buscando novos desafios e oportunidades"
+        }
+      ]
     }
   },
   "education": {
-    "title": "Educação",
+    "title": "Formação Acadêmica",
     "degree": "Análise e Desenvolvimento de Sistemas",
     "institution": "Universidade Positivo (UP)",
     "semester": "3º Semestre (em andamento)",
     "location": "Curitiba, Paraná",
-    "description": "Curso tecnológico focado no desenvolvimento de software, abordando programação, banco de dados, engenharia de software, metodologias ágeis e gestão de projetos.",
+    "description": "Curso tecnológico focado em desenvolvimento de software, abrangendo programação, bancos de dados, engenharia de software, metodologias ágeis e gestão de projetos.",
+    "highlightsTitle": "Destaques Acadêmicos",
     "highlights": {
-      "title": "Destaques Acadêmicos",
       "web": {
         "title": "Desenvolvimento Web",
-        "desc": "Projetos práticos com React, TypeScript e Node.js"
+        "description": "Projetos práticos com React, TypeScript e Node.js"
       },
       "database": {
         "title": "Banco de Dados",
-        "desc": "SQL, MongoDB e modelagem de dados"
+        "description": "SQL, MongoDB e modelagem de dados"
       },
       "agile": {
         "title": "Metodologias Ágeis",
-        "desc": "Scrum, Kanban e gestão de projetos"
+        "description": "Scrum, Kanban e gestão de projetos"
       },
       "team": {
         "title": "Projetos em Equipe",
-        "desc": "Desenvolvimento colaborativo e versionamento"
+        "description": "Desenvolvimento colaborativo e controle de versão"
       }
     }
   },
   "experience": {
-    "title": "Experiência",
-    "intro": "Minha trajetória profissional e projetos desenvolvidos"
+    "title": "Experiência e Projetos",
+    "intro": "Minha experiência profissional inclui trabalho em equipe, desenvolvimento de projetos reais e colaboração com empresas da região de Curitiba.",
+    "jobs": [
+      {
+        "title": "Desenvolvedor Full-Stack",
+        "company": "CodeByte",
+        "period": "2023 - 2024",
+        "location": "Curitiba, PR",
+        "description": "Contribui no desenvolvimento de aplicações web full-stack, trabalhando com React, TypeScript e Node.js. Participei de projetos colaborativos usando metodologias ágeis."
+      },
+      {
+        "title": "Desenvolvedor Web",
+        "company": "Projeto AED Alimentos",
+        "period": "2023",
+        "location": "Curitiba, PR",
+        "description": "Desenvolvimento de aplicações web para gestão de alimentos, focando em interface intuitiva e experiência do usuário. Implementação de funcionalidades CRUD e integração com banco de dados."
+      }
+    ],
+    "cta": {
+      "title": "Vamos trabalhar juntos?",
+      "description": "Estou sempre aberto a novos desafios e oportunidades de colaboração em projetos interessantes.",
+      "button": "Entre em Contato"
+    }
   },
   "skills": {
-    "title": "Habilidades",
-    "frontend": "Front-End",
-    "backend": "Back-End",
-    "tools": "Ferramentas",
-    "learning": "Aprendendo"
+    "title": "Habilidades Técnicas",
+    "categories": {
+      "frontend": "Front-End",
+      "backend": "Back-End e Banco de Dados",
+      "tools": "Ferramentas e Metodologias"
+    },
+    "learning": {
+      "title": "Aprendizado Contínuo",
+      "description": "A tecnologia está sempre evoluindo, e eu também. Estou constantemente estudando novas ferramentas, frameworks e melhores práticas para entregar soluções cada vez melhores."
+    }
   },
   "certifications": {
-    "title": "Certificações",
-    "intro": "Cursos e certificações que complementam minha formação"
+    "title": "Cursos e Certificações",
+    "intro": "Investi em cursos e certificações para aprofundar meus conhecimentos e desenvolver habilidades práticas em desenvolvimento full-stack.",
+    "items": [
+      {
+        "title": "Curso de Desenvolvedor Full Stack",
+        "institution": "Harve",
+        "year": "2023"
+      },
+      {
+        "title": "Curso de Desenvolvedor Full Stack",
+        "institution": "DevSamurai",
+        "year": "2022-2023"
+      }
+    ],
+    "skillsAcquired": "Habilidades Adquiridas:",
+    "commitment": {
+      "title": "Compromisso com o Aprendizado",
+      "description": "Além dos cursos formais, estou constantemente estudando através de documentação oficial, tutoriais, projetos pessoais e participação em comunidades de desenvolvedores. A tecnologia evolui rápido, e eu evoluo com ela.",
+      "stats": [
+        {
+          "number": "2+",
+          "label": "Certificações"
+        },
+        {
+          "number": "500+",
+          "label": "Horas de Estudo"
+        },
+        {
+          "number": "∞",
+          "label": "Vontade de Aprender"
+        }
+      ]
+    }
   },
   "contact": {
-    "title": "Contato",
+    "title": "Entre em Contato",
     "subtitle": "Vamos conversar?",
     "description": "Estou sempre aberto a novas oportunidades, projetos interessantes e conversas sobre tecnologia. Entre em contato comigo!",
     "email": {
       "title": "Email",
-      "action": "Enviar email"
+      "value": "brunodevthomsen@gmail.com",
+      "action": "Enviar email →"
     },
     "github": {
       "title": "GitHub",
-      "action": "Ver projetos"
+      "value": "@Bruno350",
+      "action": "Ver projetos →"
     },
     "linkedin": {
       "title": "LinkedIn",
-      "action": "Conectar"
+      "value": "Bruno Thomsen Sobrinho",
+      "action": "Conectar →"
     },
     "location": "Curitiba, Paraná, Brasil",
     "availability": "Disponível para novos projetos"
   },
   "footer": {
+    "name": "Bruno Thomsen Sobrinho",
     "tagline": "Desenvolvedor Front-End apaixonado por criar experiências digitais incríveis",
     "navigation": "Navegação",
+    "links": {
+      "home": "Início",
+      "about": "Sobre",
+      "experience": "Experiência",
+      "contact": "Contato"
+    },
     "connect": "Conecte-se",
     "copyright": "Desenvolvido com",
     "and": "e"
+  },
+  "cv": {
+    "title": "Baixar CV",
+    "subtitle": "Baixe meu currículo completo",
+    "description": "Disponível em três idiomas. Escolha sua preferência.",
+    "downloadBtn": "Baixar PDF",
+    "languages": {
+      "pt": "Português",
+      "en": "Inglês",
+      "es": "Espanhol"
+    }
   }
 }

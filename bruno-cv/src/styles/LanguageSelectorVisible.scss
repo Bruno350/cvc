@@ -1,92 +1,106 @@
 // ============================================
-// LANGUAGE SELECTOR STYLES - VERSÃO VISÍVEL
+// LANGUAGE SELECTOR - DESIGN MODERNO E CLEAN
 // ============================================
 
 .language-selector {
   position: relative;
-  z-index: 1001; // Maior que o header
-  margin: 0 4px; // Espaçamento dos lados
+  z-index: 101;
 }
 
 .language-button {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 16px;
+  justify-content: center;
+  gap: 6px;
+  width: 56px;
+  height: 44px;
   background: var(--card-bg);
-  border: 2px solid var(--accent-color);
-  border-radius: 12px;
-  color: var(--text-color);
-  font-size: 0.9rem;
-  font-weight: 600;
+  border: 2px solid var(--border-color);
+  border-radius: 10px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   outline: none;
-  min-width: 100px;
-  box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
+  position: relative;
+  overflow: hidden;
+
+  // Efeito de hover suave
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--accent-color);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
 
   &:hover {
-    background: var(--accent-color);
-    color: white;
+    border-color: var(--accent-color);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+
+    &::before {
+      opacity: 0.05;
+    }
   }
 
   &:active {
     transform: translateY(0);
   }
 
-  .globe-icon {
-    font-size: 1.2rem;
-    color: currentColor;
-  }
-
-  .current-lang {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
+  .current-flag {
+    font-size: 1.75rem;
+    line-height: 1;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
   }
 
   .dropdown-arrow {
-    font-size: 0.7rem;
-    color: currentColor;
-    margin-left: 4px;
-    transition: transform 0.2s ease;
-  }
-}
-
-// Estado aberto
-.language-button:has(+ .language-dropdown) {
-  .dropdown-arrow {
-    transform: rotate(180deg);
+    font-size: 0.65rem;
+    color: var(--text-secondary);
+    position: relative;
+    z-index: 1;
+    transition: all 0.2s ease;
   }
 }
 
 .language-dropdown {
   position: absolute;
-  top: calc(100% + 12px);
+  top: calc(100% + 10px);
   right: 0;
   min-width: 200px;
   background: var(--card-bg);
-  border: 2px solid var(--accent-color);
+  border: 2px solid var(--border-color);
   border-radius: 12px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.12),
+    0 2px 8px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  z-index: 1002;
+  z-index: 102;
 
-  // Seta para cima
+  // Seta decorativa
   &::before {
     content: '';
     position: absolute;
     top: -8px;
-    right: 20px;
+    right: 16px;
     width: 0;
     height: 0;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--accent-color);
+    border-bottom: 8px solid var(--border-color);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -6px;
+    right: 17px;
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid var(--card-bg);
   }
 }
 
@@ -99,10 +113,10 @@
   background: transparent;
   border: none;
   color: var(--text-color);
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   text-align: left;
   position: relative;
 
@@ -110,75 +124,103 @@
     border-bottom: 1px solid var(--border-color);
   }
 
+  // Hover effect
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--accent-color);
+    transform: scaleY(0);
+    transition: transform 0.2s ease;
+  }
+
   .lang-flag {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     line-height: 1;
-    min-width: 30px;
+    min-width: 28px;
     text-align: center;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
   }
 
   .lang-name {
     flex: 1;
     font-weight: 600;
+    transition: color 0.2s ease;
   }
 
   .check-icon {
     color: var(--accent-color);
-    font-size: 1rem;
+    font-size: 0.9rem;
     display: flex;
     align-items: center;
+    flex-shrink: 0;
   }
 
   &.active {
-    background: var(--secondary-bg);
+    background: linear-gradient(
+      90deg,
+      rgba(59, 130, 246, 0.08) 0%,
+      transparent 100%
+    );
     color: var(--accent-color);
-    font-weight: 700;
+
+    .lang-name {
+      font-weight: 700;
+    }
+
+    &::before {
+      transform: scaleY(1);
+    }
   }
 
   &:hover:not(.active) {
-    background: var(--accent-color);
-    color: white;
-    transform: translateX(4px);
+    background: var(--secondary-bg);
     
+    &::before {
+      transform: scaleY(1);
+      opacity: 0.5;
+    }
+
     .lang-flag {
-      transform: scale(1.2);
+      transform: scale(1.1);
+    }
+
+    .lang-name {
+      color: var(--accent-color);
     }
   }
 }
 
-// Dark mode específico
+// Dark mode ajustes
 [data-theme="dark"] {
   .language-button {
     background: var(--secondary-bg);
-    border-color: var(--accent-color);
-    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
-
+    
     &:hover {
-      background: var(--accent-color);
-      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.35);
     }
   }
 
   .language-dropdown {
-    background: var(--secondary-bg);
-    border-color: var(--accent-color);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    box-shadow: 
+      0 10px 40px rgba(0, 0, 0, 0.4),
+      0 2px 8px rgba(0, 0, 0, 0.3);
   }
 }
 
 // Responsivo
 @media (max-width: 768px) {
   .language-button {
-    padding: 8px 12px;
-    min-width: 90px;
+    width: 52px;
+    height: 42px;
     
-    .current-lang {
-      font-size: 0.85rem;
-      gap: 4px;
-    }
-
-    .globe-icon {
-      font-size: 1.1rem;
+    .current-flag {
+      font-size: 1.6rem;
     }
   }
 
@@ -190,23 +232,22 @@
     padding: 12px 14px;
     
     .lang-flag {
-      font-size: 1.5rem;
+      font-size: 1.35rem;
     }
   }
 }
 
 @media (max-width: 480px) {
-  .language-selector {
-    margin: 0 2px;
-  }
-
   .language-button {
-    padding: 6px 10px;
-    min-width: 80px;
-    gap: 6px;
+    width: 48px;
+    height: 40px;
+    
+    .current-flag {
+      font-size: 1.5rem;
+    }
 
-    .current-lang span:last-child {
-      display: none; // Oculta o código do idioma em telas muito pequenas
+    .dropdown-arrow {
+      font-size: 0.6rem;
     }
   }
 
